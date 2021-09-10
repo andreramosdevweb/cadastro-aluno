@@ -83,7 +83,7 @@ class StudentController extends Controller
 
         } catch (\Exception $e) {
             return redirect()->route('students.edit', compact($id))
-                ->withErrors("Erro ao editar novo Aluno!");
+                ->withErrors("Erro ao editar Aluno!");
         }
 
     }
@@ -91,6 +91,10 @@ class StudentController extends Controller
 
     public function destroy($id)
     {
-        dd($id);
+
+        $student = Student::findOrFail($id);
+        $student->delete();
+
+        return redirect()->route('students.index');
     }
 }
