@@ -40,31 +40,33 @@
                             </div>
                             <div class="col-lg-3">
                                 <label class="form-label">CEP</label>
-                                <input type="text" class="form-control mask-zipcode zip_code_search" name="zipcode">
+                                <input type="text" class="form-control mask-zipcode zip_code_search" name="zipcode"
+                                       value="{{old('zipcode')}}">
                             </div>
                             <div class="col-lg-9">
                                 <label class="form-label">Logradouro</label>
-                                <input type="text" class="form-control street" name="street">
+                                <input type="text" class="form-control street" name="street" value="{{old('street')}}">
                             </div>
-                            <div class="col-lg-2 col-md-4">
+                            <div class=" col-lg-2 col-md-4">
                                 <label class="form-label">Número</label>
-                                <input type="text" class="form-control" name="complement">
+                                <input type="text" class="form-control" name="number" value="{{old('number')}}">
                             </div>
                             <div class="col-lg-5 col-md-8">
                                 <label class="form-label">Complemento</label>
-                                <input type="text" class="form-control" name="complement">
+                                <input type="text" class="form-control" name="complement" value="{{old('complement')}}">
                             </div>
                             <div class="col-lg-5">
                                 <label class="form-label">Bairro</label>
-                                <input type="text" class="form-control neighborhood" name="neighborhood">
+                                <input type="text" class="form-control neighborhood" name="neighborhood"
+                                       value="{{old('neighborhood')}}">
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Cidade</label>
-                                <input type="text" class="form-control city" name="city">
+                                <input type="text" class="form-control city" name="city" value="{{old('city')}}">
                             </div>
                             <div class="col-lg-6">
                                 <label class="form-label">Estado</label>
-                                <input type="text" class="form-control state" name="state">
+                                <input type="text" class="form-control state" name="state" value="{{old('state')}}">
                             </div>
                         </div>
                     </div>

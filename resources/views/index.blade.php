@@ -40,38 +40,40 @@
                 </div>
             @else
                 <div class="content_app_box">
-                    <table id="table-students" class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col" style="width: 40%" class="text-center">Nome Completo</th>
-                            <th scope="col" style="width: 20%" class="text-center">Data de Nascimento</th>
-                            <th scope="col" style="width: 20%" class="text-center">Renda Familiar</th>
-                            <th scope="col" style="width: 20%" class="text-center">Ações</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($students as $student)
+                    <div class="table-responsive">
+                        <table id="table-students" class="table table-bordered">
+                            <thead>
                             <tr>
-                                <th scope="row">{{$student->id}}</th>
-                                <td>{{$student->full_name}}</td>
-                                <td>{{$student->birth_date}}</td>
-                                <td>{{$student->family_income}}</td>
-                                <td class="text-center">
-                                    <a href="{{route('students.edit', $student->id )}}"
-                                       class="btn btn-galileu-color btn-sm text-white">Editar</a>
-                                    <button type="button"
-                                            class=" btn btn-galileu-color-danger btn-sm text-white"
-                                            data-bs-toggle="modal"
-                                            data-full-name="{{$student->full_name}}"
-                                            data-action="{{ route('students.destroy',$student->id ) }}"
-                                            data-bs-target="#modal-delete">Excluir
-                                    </button>
-                                </td>
+                                <th scope="col">#</th>
+                                <th scope="col" style="width: 40%" class="text-center">Nome Completo</th>
+                                <th scope="col" style="width: 20%" class="text-center">Data de Nascimento</th>
+                                <th scope="col" style="width: 20%" class="text-center">Renda Familiar</th>
+                                <th scope="col" style="width: 20%" class="text-center">Ações</th>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            @foreach($students as $student)
+                                <tr>
+                                    <th scope="row">{{$student->id}}</th>
+                                    <td>{{$student->full_name}}</td>
+                                    <td>{{$student->birth_date}}</td>
+                                    <td>{{$student->family_income}}</td>
+                                    <td class="text-center">
+                                        <a href="{{route('students.edit', $student->id )}}"
+                                           class="btn btn-galileu-color btn-sm text-white mb-2 mb-sm-0">Editar</a>
+                                        <button type="button"
+                                                class=" btn btn-galileu-color-danger btn-sm text-white"
+                                                data-bs-toggle="modal"
+                                                data-full-name="{{$student->full_name}}"
+                                                data-action="{{ route('students.destroy',$student->id ) }}"
+                                                data-bs-target="#modal-delete">Excluir
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="d-flex justify-content-center">
                         {{$students->links('pagination::bootstrap-4')}}
                     </div>
@@ -103,6 +105,7 @@
             </div>
         </div>
     </div>
+
 
 @endsection
 

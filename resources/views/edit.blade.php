@@ -80,7 +80,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="avatar"
-                                         style='background-size: cover;background-image: url({{ (empty($student->url_avatar) ? asset('assets/images/avatar.png') : asset( $student->url_avatar)) }});'>
+                                         style="background-size: cover; width: 120px; height: 120px ;background-image: url({{ (empty($student->url_avatar) ? asset('assets/images/avatar.png') : asset( $student->url_avatar)) }})">
                                     </div>
                                 </div>
                                 <input type="file" name="avatar" accept="image/*">
